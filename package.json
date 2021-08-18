@@ -1,0 +1,32 @@
+{
+  "name": "movie_app",
+  "version": "1.0.0",
+  "description": "movie app",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "react-scripts start"
+  },
+  "keywords": [
+    "Movie",
+    "App"
+  ],
+  "author": "Sushmit",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.3",
+    "reactstrap": "^8.9.0",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "prettier": "^2.2.1"
+  }
+}
