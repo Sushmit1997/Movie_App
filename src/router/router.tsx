@@ -1,11 +1,5 @@
 import * as React from 'react'
-import {
-	BrowserRouter as Router,
-	Route,
-	Link,
-	useHistory,
-	Switch,
-} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import MoviePage from '../pages/MoviePage/MoviePage'
 
@@ -17,7 +11,7 @@ const RouterComponent: React.FC<Props> = () => {
 	return (
 		<Router>
 			<Switch>
-				<Route exact path='' component={MoviePage}></Route>
+				<Route exact path='/' component={MoviePage}></Route>
 			</Switch>
 		</Router>
 	)
