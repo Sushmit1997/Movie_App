@@ -4,7 +4,7 @@
   "description": "movie app",
   "main": "index.js",
   "scripts": {
-    "test": "react-scripts test",
+    "test": "react-scripts test --passWithNoTests",
     "start": "react-scripts start",
     "build": "CI=false && react-scripts build"
   },
