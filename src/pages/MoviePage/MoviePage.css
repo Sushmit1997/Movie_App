@@ -2,4 +2,19 @@
     padding: 20px;
     display: flex;
     justify-content: center;
+    background-color: #d1ccc0;
+    height: 100%;
+    color: aliceblue;
+}
+
+.moviePageInnerContainer{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.moviePageCardsContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
