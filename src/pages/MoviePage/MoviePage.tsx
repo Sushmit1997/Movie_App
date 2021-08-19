@@ -35,7 +35,7 @@ const MoviePage = (props: Props) => {
 					<div>
 						<h2>Movie Page</h2>
 						{movieData.map((data, index) => {
-							return <MovieCard key={data.id} movieInfo={data} />
+							return <MovieCard key={index} movieInfo={data} />
 						})}
 					</div>
 				)}

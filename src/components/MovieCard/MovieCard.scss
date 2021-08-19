@@ -1,20 +1,23 @@
 .movieCardMainContainer{
     display: flex;
+    flex-direction: column;
     margin-bottom: 15px;
     padding: 10px;
     background-color: #ffffff;
+    border-radius: 4px;
     color: #2c2c54;
     transition: box-shadow  0.2s ease-in;
+    width: 500px;
 
     &:hover{
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 }
 
-.movieCardImageDiv{
-    width: 100px;
-    height: 250px;
+.movieCardInnerDiv{
+    display: flex;
 }
+
 
 .movieCardImage{
     width: 150px;
@@ -22,8 +25,16 @@
 
 }
 
+.movieCardInfoSectionContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
 .movieCardInfoSection{
-    margin-left: 80px;
+    margin-left: 35px;
+    margin-top: 25px;
     display: flex;
     flex-direction: column;
 }
@@ -37,5 +48,61 @@
     word-break: break-all;
     text-align: left;
 }
+
+.heartIconDiv{
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    right: 20px;
+}
+
+.fas.fa-heart{
+    transition:color 0.1s ease-in;
+    font-size: 18px;
+    transition: font-size  0.15s ease-in;
+    
+    &:hover{
+        color:red;
+        font-size:20px
+
+    }
+}
+
+.fas.fa-heart.red{
+    color: red;
+}
+
+.movieDirectorSpan{
+    cursor: pointer;
+    transition: font-weight 0.05s ease-in;
+
+    &:hover{
+        font-weight: 600;
+    }
+}
+
+
+//Accordion styling
+
+.movieAccordionContainer{
+}
+
+.accordion-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  
+  .accordion-title:hover {
+  }
+  
+  .accordion-title,
+  .accordion-content {
+    padding: 1rem;
+  }
+  
+  .accordion-content {
+  }
 
 
