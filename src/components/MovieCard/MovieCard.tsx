@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Modal from '@material-ui/core/Modal'
 import Backdrop from '@material-ui/core/Backdrop'
 import Fade from '@material-ui/core/Fade'
-
+import CircularProgress from '@material-ui/core/CircularProgress'
 import { get } from '../../utils/http'
 
 const accordionData = {
@@ -43,7 +43,8 @@ const MovieCard: React.FC<Props> = (props: Props) => {
 
 	const [movieFav, setMovieFav] = useState(false)
 	const [isActive, setIsActive] = useState(false)
-	const [movieDetail, setMovieDetail] = useState(null)
+	const [movieDetail, setMovieDetail]: any = useState('')
+	const [movieDetailLoading, setMovieDetailLoading] = useState(true)
 	const [modal, setModal] = useState(false)
 
 	const toggle = (e) => {
@@ -98,14 +99,16 @@ const MovieCard: React.FC<Props> = (props: Props) => {
 
 	const fetchMovieDetails = () => {
 		setIsActive(!isActive)
-		// {
-		// 	!isActive &&
-		// 		get(
-		// 			`https://imdb-api.com/en/API/Title/k_patmt9tu/${movieInfo.id}/FullActor,Posters,Ratings,`
-		// 		).then((response) => {
-		// 			setMovieDetail(response.data)
-		// 		})
-		// }
+		{
+			!isActive &&
+				movieDetail === '' &&
+				get(
+					`https://imdb-api.com/en/API/Title/k_patmt9tu/${movieInfo.id}/FullActor,Ratings,`
+				).then((response: any) => {
+					setMovieDetail(response.data)
+					setMovieDetailLoading(false)
+				})
+		}
 	}
 
 	const handleDirectorClick = (e) => {
@@ -139,6 +142,7 @@ const MovieCard: React.FC<Props> = (props: Props) => {
 						<span
 							className='movieDirectorSpan'
 							onClick={(e) => handleDirectorClick(e)}
+							style={{ width: 'fit-content' }}
 						>
 							{movieInfo.director}
 						</span>
@@ -155,7 +159,36 @@ const MovieCard: React.FC<Props> = (props: Props) => {
 				<div className='movieAccordionContainer'>
 					<div className='accordion'>
 						<div className='accordion-item'>
-							{isActive && <div className='accordion-content'>{content}</div>}
+							{isActive && (
+								<div className='accordion-content'>
+									{movieDetailLoading ? (
+										<div className='movieDetailLoadingDiv'>
+											<CircularProgress color='primary' />
+										</div>
+									) : (
+										<ul className='accordion-ul'>
+											<li>
+												{' '}
+												<span>Awards:</span> {movieDetail.awards}
+											</li>
+											<li>
+												{' '}
+												<span>Budget:</span> {movieDetail.boxOffice.budget}
+											</li>
+											<li>
+												<span>Imdb Rating:</span> {movieDetail.imDbRating}{' '}
+												<span>Voted by:</span> {movieDetail.imDbRatingVotes}
+											</li>
+											<li>
+												<span>Plot:</span> {movieDetail.plot}
+											</li>
+											<li>
+												<span>Released Date:</span> {movieDetail.releaseDate}
+											</li>
+										</ul>
+									)}
+								</div>
+							)}
 						</div>
 					</div>
 				</div>

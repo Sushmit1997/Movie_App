@@ -91,19 +91,38 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    cursor: pointer;
     margin-top: auto;
   }
   
-  .accordion-title:hover {
-  }
   
   .accordion-title,
   .accordion-content {
     padding: 1rem;
   }
+
+  .movieDetailLoadingDiv{
+      display: flex;
+      justify-content: center;
+  }
   
   .accordion-content {
+      display: flex;
+      flex-direction: column;
+
+
+    .accordion-ul{
+        padding-left: 0px;
+        list-style: none;
+
+        li{
+            text-align: left;
+            margin-bottom: 10px;
+
+            span{
+                font-weight: bold;
+            }
+        }
+    }
   }
 
 

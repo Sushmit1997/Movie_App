@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Spinner } from 'reactstrap'
-import './MoviePage.css'
+import { Button } from 'reactstrap'
+import './MoviePage.scss'
 import MovieCard from '../../components/MovieCard/MovieCard'
 import movieData from '../../utils/dummyData'
 import CircularProgress from '@material-ui/core/CircularProgress'
@@ -40,10 +40,17 @@ const useStyles = makeStyles((theme) => ({
 const MoviePage = (props: Props) => {
 	const classes = useStyles()
 	let [movieListLoading, setMovieListLoading] = useState(true)
+	let [moviesCount, setMoviesCount] = useState(3)
 
 	setTimeout(() => {
 		setMovieListLoading(false)
 	}, 1500)
+
+	const handleLoadMore = () => {
+		{
+			moviesCount > 3 ? setMoviesCount(3) : setMoviesCount(6)
+		}
+	}
 
 	return (
 		<div className='moviePageContainer'>
@@ -54,12 +61,15 @@ const MoviePage = (props: Props) => {
 					<div>
 						<Fade in={!movieListLoading}>
 							<Paper className={classes.paper}>
-								<h2>Movie Page</h2>
-								{movieData.map((data, index) => {
+								<h2>Movies List</h2>
+								{movieData.slice(0, moviesCount).map((data, index) => {
 									return <MovieCard key={index} movieInfo={data} />
 								})}
 							</Paper>
 						</Fade>
+						<button className='loadMoreButton' onClick={() => handleLoadMore()}>
+							{moviesCount > 3 ? 'Show less' : 'Load more'}
+						</button>
 					</div>
 				)}
 			</div>

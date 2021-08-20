@@ -28,12 +28,12 @@ const movieData = [
 		},
 	},
 	{
-		id: 'tt0120338',
+		id: 'tt0816692',
 		title: 'Interstellar',
 		image:
 			'https://imdb-api.com/images/original/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_Ratio0.7273_AL_.jpg',
 		director: 'Christopher Nolan',
-		type: 'Romance / Real Story',
+		type: 'Sci-Fi/ Adventure',
 		description: '(2014)',
 		directorInfo: {
 			name: 'Christopher Nolan',
@@ -53,6 +53,34 @@ const movieData = [
 			name: 'Russo Brothers',
 			description:
 				'Anthony Russo (born February 3, 1970) and Joseph Russo (born July 18, 1971), collectively known as the Russo brothers (ROO-so), are American directors, producers, screenwriters, and actors. They direct most of their work together.They are best known for directing four films in the Marvel Cinematic Universe: Captain America: The Winter Soldier (2014), Captain America: Civil War (2016), Avengers: Infinity War (2018), and Avengers: Endgame (2019). Endgame grossed over $2.798 billion worldwide, becoming one of the highest-grossing films of all time (not adjusted for inflation). The brothers have also worked as directors and/or producers on the comedy series Arrested Development (2003–2005), Community (2009–2014), and Happy Endings (2011–2012). They won a Primetime Emmy Award for Arrested Development. ',
+		},
+	},
+	{
+		id: 'tt5034838',
+		title: 'Kingkong Vs  Godzilla',
+		image:
+			'https://imdb-api.com/images/original/MV5BZmYzMzU4NjctNDI0Mi00MGExLWI3ZDQtYzQzYThmYzc2ZmNjXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_Ratio0.7273_AL_.jpg',
+		director: 'Adam Wingard',
+		type: 'Monsters / Sci-Fi',
+		description: '(2021)',
+		directorInfo: {
+			name: 'Adam Wingard',
+			description:
+				'Adam Wingard ( born December 3, 1982) is an American filmmaker. He has served as a director, producer, screenwriter, editor, cinematographer, actor, and composer on numerous projects.Following an early career as a member of the mumblecore movement, he became notable for his works in the horror and action genres, especially the films Youre Next (2011), and The Guest (2014), and the bigger budget franchise films Blair Witch (2016), Death Note (2017), and Godzilla vs. Kong (2021).',
+		},
+	},
+	{
+		id: 'tt0111161',
+		title: 'The Shawshank Redemption',
+		image:
+			'https://imdb-api.com/images/original/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_Ratio0.7273_AL_.jpg',
+		director: 'Frank Darabont',
+		type: 'Prison / Real Life Based',
+		description: '(1994)',
+		directorInfo: {
+			name: 'Frank Darabont',
+			description:
+				'Frank Árpád Darabont (born Ferenc Árpád Darabont, January 28, 1959) is a French-American film director, screenwriter and producer of Hungarian[2] descent. He has been nominated for three Academy Awards and a Golden Globe Award. In his early career, he was primarily a screenwriter for horror films such as A Nightmare on Elm Street 3: Dream Warriors (1987), The Blob (1988) and The Fly II (1989). As a director, he is known for his film adaptations of Stephen King novellas and novels such as The Shawshank Redemption (1994), The Green Mile (1999) and The Mist (2007).',
 		},
 	},
 ]
