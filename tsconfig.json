@@ -25,7 +25,9 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src",
+    "src/**/*.ts",
+    "tests/*.ts"
   ],
   "typeRoots": [
     "./@types/types"

@@ -90,8 +90,9 @@
 .accordion-title {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     cursor: pointer;
+    margin-top: auto;
   }
   
   .accordion-title:hover {

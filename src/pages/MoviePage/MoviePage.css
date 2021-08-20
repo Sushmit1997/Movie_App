@@ -3,8 +3,8 @@
     display: flex;
     justify-content: center;
     background-color: #d1ccc0;
-    height: 100%;
     color: aliceblue;
+    height: 2000px;
 }
 
 .moviePageInnerContainer{

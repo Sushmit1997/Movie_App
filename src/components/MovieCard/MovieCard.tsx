@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import './MovieCard.scss'
 import { IMovieData } from '../../interfaces/IMovieData'
 import { useSnackbar } from 'notistack'
 import { makeStyles } from '@material-ui/core/styles'
@@ -31,10 +30,11 @@ const useStyles = makeStyles((theme) => ({
 	paper: {
 		backgroundColor: theme.palette.background.paper,
 		padding: theme.spacing(2, 4, 3),
+		width: '60%',
 	},
 }))
 
-const MovieCard = (props: Props) => {
+const MovieCard: React.FC<Props> = (props: Props) => {
 	const { movieInfo } = props
 
 	const { title, content } = accordionData
@@ -51,35 +51,61 @@ const MovieCard = (props: Props) => {
 		setModal(!modal)
 	}
 
+	const handleFakePromiseFav = () => {
+		var randomBoolean = Math.random() < 0.5
+		return new Promise((resolve, reject) => {
+			{
+				randomBoolean ? resolve(randomBoolean) : reject(randomBoolean)
+			}
+		})
+	}
+
 	const handleFavMovie = (e) => {
 		e.stopPropagation()
-		setTimeout(() => {
-			setMovieFav(!movieFav)
-			movieFav
-				? enqueueSnackbar(`${movieInfo.title} removed from favourites.`, {
-						variant: 'warning',
+		handleFakePromiseFav()
+			.then((response) => {
+				setTimeout(() => {
+					setMovieFav(!movieFav)
+					movieFav
+						? enqueueSnackbar(`${movieInfo.title} removed from favourites.`, {
+								variant: 'warning',
+								anchorOrigin: {
+									vertical: 'bottom',
+									horizontal: 'right',
+								},
+						  })
+						: enqueueSnackbar(`${movieInfo.title} added to favourites.`, {
+								variant: 'success',
+								anchorOrigin: {
+									vertical: 'bottom',
+									horizontal: 'right',
+								},
+						  })
+				}, 500)
+			})
+			.catch((error) => {
+				setTimeout(() => {
+					enqueueSnackbar(`Something went wrong! Please try again.`, {
+						variant: 'error',
 						anchorOrigin: {
 							vertical: 'bottom',
 							horizontal: 'right',
 						},
-				  })
-				: enqueueSnackbar(`${movieInfo.title} added to favourites.`, {
-						variant: 'success',
-						anchorOrigin: {
-							vertical: 'bottom',
-							horizontal: 'right',
-						},
-				  })
-		}, 500)
+					})
+				}, 500)
+			})
 	}
 
 	const fetchMovieDetails = () => {
 		setIsActive(!isActive)
-		// get(
-		// 	`https://imdb-api.com/en/API/Title/k_patmt9tu/${movieInfo.id}/FullActor,Posters,Ratings,`
-		// ).then((response) => {
-		// 	setMovieDetail(response.data)
-		// })
+		// {
+		// 	!isActive &&
+		// 		get(
+		// 			`https://imdb-api.com/en/API/Title/k_patmt9tu/${movieInfo.id}/FullActor,Posters,Ratings,`
+		// 		).then((response) => {
+		// 			setMovieDetail(response.data)
+		// 		})
+		// }
 	}
 
 	const handleDirectorClick = (e) => {
@@ -89,8 +115,14 @@ const MovieCard = (props: Props) => {
 
 	const classes = useStyles()
 
+	console.log('Movie details', movieDetail)
+
 	return (
-		<div className='movieCardMainContainer' onClick={fetchMovieDetails}>
+		<div
+			data-testid={`movieCard`}
+			className='movieCardMainContainer'
+			onClick={fetchMovieDetails}
+		>
 			<div className='movieCardInnerDiv'>
 				<div className='movieCardImageDiv'>
 					<img className='movieCardImage' src={movieInfo.image}></img>
@@ -111,22 +143,24 @@ const MovieCard = (props: Props) => {
 							{movieInfo.director}
 						</span>
 					</div>
-				</div>
-			</div>
-			<div className='movieAccordionContainer'>
-				<div className='accordion'>
-					<div className='accordion-item'>
-						<div
-							className='accordion-title'
-							onClick={() => setIsActive(!isActive)}
-						>
-							<div>More Info</div>
-							<div>{isActive ? '-' : '+'}</div>
-						</div>
-						{isActive && <div className='accordion-content'>{content}</div>}
+					<div
+						className='accordion-title'
+						onClick={() => setIsActive(!isActive)}
+					>
+						<div>{isActive ? '-' : '+'}</div>
 					</div>
 				</div>
 			</div>
+			{isActive && (
+				<div className='movieAccordionContainer'>
+					<div className='accordion'>
+						<div className='accordion-item'>
+							{isActive && <div className='accordion-content'>{content}</div>}
+						</div>
+					</div>
+				</div>
+			)}
+
 			<Modal
 				aria-labelledby='transition-modal-title'
 				aria-describedby='transition-modal-description'
@@ -141,9 +175,9 @@ const MovieCard = (props: Props) => {
 			>
 				<Fade in={modal}>
 					<div className={classes.paper}>
-						<h2 id='transition-modal-title'>Director Info</h2>
+						<h2 id='transition-modal-title'>{movieInfo.directorInfo.name}</h2>
 						<p id='transition-modal-description'>
-							react-transition-group animates me.
+							{movieInfo.directorInfo.description}
 						</p>
 					</div>
 				</Fade>

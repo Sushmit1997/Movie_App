@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MovieCard/> renderes with correct text 1`] = `
+Array [
+  " ",
+  <div
+    className="movieCardMainContainer"
+    data-testid="movieCard"
+    onClick={[Function]}
+  >
+    <div
+      className="movieCardInnerDiv"
+    >
+      <div
+        className="movieCardImageDiv"
+      >
+        <img
+          className="movieCardImage"
+          src="https://imdb-api.com/images/original/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_Ratio0.7273_AL_.jpg"
+        />
+      </div>
+      <div
+        className="movieCardInfoSectionContainer"
+      >
+        <div
+          className="heartIconDiv"
+          onClick={[Function]}
+        >
+          <i
+            className="fas fa-heart  "
+          />
+        </div>
+        <div
+          className="movieCardInfoSection"
+        >
+          <span>
+            Interstellar
+             
+            (2014)
+             
+          </span>
+          <span>
+            Romance / Real Story
+          </span>
+          <span
+            className="movieDirectorSpan"
+            onClick={[Function]}
+          >
+            Christopher Nolan
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      className="movieAccordionContainer"
+    >
+      <div
+        className="accordion"
+      >
+        <div
+          className="accordion-item"
+        >
+          <div
+            className="accordion-title"
+            onClick={[Function]}
+          >
+            <div>
+              More Info
+            </div>
+            <div>
+              +
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  " ",
+]
+`;
