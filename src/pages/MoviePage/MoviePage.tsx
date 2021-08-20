@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Button } from 'reactstrap'
-import './MoviePage.scss'
 import MovieCard from '../../components/MovieCard/MovieCard'
 import movieData from '../../utils/dummyData'
 import CircularProgress from '@material-ui/core/CircularProgress'
@@ -53,7 +52,7 @@ const MoviePage = (props: Props) => {
 	}
 
 	return (
-		<div className='moviePageContainer'>
+		<div data-testid={`moviePage`} className='moviePageContainer'>
 			<div className='moviePageInnerContainer'>
 				{movieListLoading ? (
 					<CircularProgress color='primary' />

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<MovieCard/> renderes with correct text 1`] = `
+exports[`<MovieCard/> matches the snapshot 1`] = `
 Array [
   " ",
   <div
