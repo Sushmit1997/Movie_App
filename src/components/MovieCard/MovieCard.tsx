@@ -99,16 +99,16 @@ const MovieCard: React.FC<Props> = (props: Props) => {
 
 	const fetchMovieDetails = () => {
 		setIsActive(!isActive)
-		{
-			!isActive &&
-				movieDetail === '' &&
-				get(
-					`https://imdb-api.com/en/API/Title/k_patmt9tu/${movieInfo.id}/FullActor,Ratings,`
-				).then((response: any) => {
-					setMovieDetail(response.data)
-					setMovieDetailLoading(false)
-				})
-		}
+		// {
+		// 	!isActive &&
+		// 		movieDetail === '' &&
+		// 		get(
+		// 			`https://imdb-api.com/en/API/Title/k_patmt9tu/${movieInfo.id}/FullActor,Ratings,`
+		// 		).then((response: any) => {
+		// 			setMovieDetail(response.data)
+		// 			setMovieDetailLoading(false)
+		// 		})
+		// }
 	}
 
 	const handleDirectorClick = (e) => {
@@ -138,7 +138,7 @@ const MovieCard: React.FC<Props> = (props: Props) => {
 						<span>
 							{movieInfo.title} {movieInfo.description}{' '}
 						</span>
-						<span>{movieInfo.type}</span>
+						<span> {movieInfo.type}</span>
 						<span
 							className='movieDirectorSpan'
 							onClick={(e) => handleDirectorClick(e)}
@@ -209,9 +209,16 @@ const MovieCard: React.FC<Props> = (props: Props) => {
 				<Fade in={modal}>
 					<div className={classes.paper}>
 						<h2 id='transition-modal-title'>{movieInfo.directorInfo.name}</h2>
-						<p id='transition-modal-description'>
-							{movieInfo.directorInfo.description}
-						</p>
+						<div className='directorInfoInnerContainer'>
+							<img
+								className='directorImage'
+								src={movieInfo.directorInfo.image}
+								alt={`Picture of ${movieInfo.directorInfo.name}`}
+							></img>
+							<p id='transition-modal-description'>
+								{movieInfo.directorInfo.description}
+							</p>
+						</div>
 					</div>
 				</Fade>
 			</Modal>

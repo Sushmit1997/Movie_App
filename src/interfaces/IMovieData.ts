@@ -7,6 +7,7 @@ export interface IMovieData {
 	description: string
 	directorInfo: {
 		name: string
+		image: string
 		description: string
 	}
 }

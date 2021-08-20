@@ -1,128 +1,130 @@
-.movieCardMainContainer{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-    padding: 10px;
-    background-color: #ffffff;
-    border-radius: 4px;
-    color: #2c2c54;
-    transition: box-shadow  0.2s ease-in;
-    width: 500px;
+.movieCardMainContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  color: #2c2c54;
+  transition: box-shadow 0.2s ease-in;
+  width: 500px;
 
-    &:hover{
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
+  &:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
 }
 
-.movieCardInnerDiv{
-    display: flex;
+.movieCardInnerDiv {
+  display: flex;
 }
 
-
-.movieCardImage{
-    width: 150px;
-    height: 250px;
-
+.movieCardImage {
+  width: 150px;
+  height: 250px;
 }
 
-.movieCardInfoSectionContainer{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+.movieCardInfoSectionContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
-.movieCardInfoSection{
-    margin-left: 35px;
-    margin-top: 25px;
-    display: flex;
-    flex-direction: column;
+.movieCardInfoSection {
+  margin-left: 35px;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
 }
 
-.movieCardInfoSection span:first-child{
-    font-size: 30px;
+.movieCardInfoSection span:first-child {
+  font-size: 30px;
 }
 
 .movieCardInfoSection span {
-    margin-bottom: 15px;
-    word-break: break-all;
-    text-align: left;
+  margin-bottom: 15px;
+  word-break: break-all;
+  text-align: left;
 }
 
-.heartIconDiv{
-    position: absolute;
-    display: flex;
-    justify-content: flex-end;
-    right: 20px;
+.heartIconDiv {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  right: 20px;
 }
 
-.fas.fa-heart{
-    transition:color 0.1s ease-in;
-    font-size: 18px;
-    transition: font-size  0.15s ease-in;
-    
-    &:hover{
-        color:red;
-        font-size:20px
+.fas.fa-heart {
+  transition: color 0.1s ease-in;
+  font-size: 18px;
+  transition: font-size 0.15s ease-in;
 
-    }
-}
-
-.fas.fa-heart.red{
+  &:hover {
     color: red;
+    font-size: 20px;
+  }
 }
 
-.movieDirectorSpan{
-    cursor: pointer;
-    transition: font-weight 0.05s ease-in;
-
-    &:hover{
-        font-weight: 600;
-    }
+.fas.fa-heart.red {
+  color: red;
 }
 
+.movieDirectorSpan {
+  cursor: pointer;
+  transition: font-weight 0.05s ease-in;
+
+  &:hover {
+    font-weight: 600;
+  }
+}
+
+.directorImage {
+  width: 200px;
+  margin-right: 30px;
+}
+
+.directorInfoInnerContainer {
+  display: flex;
+}
+
+#transition-modal-description {
+  line-height: 1.35;
+}
 
 //Accordion styling
 
-.movieAccordionContainer{
+.accordion-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: auto;
 }
 
-.accordion-title {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-top: auto;
-  }
-  
-  
-  .accordion-title,
-  .accordion-content {
-    padding: 1rem;
-  }
+.accordion-title,
+.accordion-content {
+  padding: 1rem;
+}
 
-  .movieDetailLoadingDiv{
-      display: flex;
-      justify-content: center;
-  }
-  
-  .accordion-content {
-      display: flex;
-      flex-direction: column;
+.movieDetailLoadingDiv {
+  display: flex;
+  justify-content: center;
+}
 
+.accordion-content {
+  display: flex;
+  flex-direction: column;
 
-    .accordion-ul{
-        padding-left: 0px;
-        list-style: none;
+  .accordion-ul {
+    padding-left: 0px;
+    list-style: none;
 
-        li{
-            text-align: left;
-            margin-bottom: 10px;
+    li {
+      text-align: left;
+      margin-bottom: 10px;
 
-            span{
-                font-weight: bold;
-            }
-        }
+      span {
+        font-weight: bold;
+      }
     }
   }
-
-
+}
