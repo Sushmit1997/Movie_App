@@ -40,36 +40,26 @@ Array [
              
           </span>
           <span>
-            Romance / Real Story
+            Sci-Fi/ Adventure
           </span>
           <span
             className="movieDirectorSpan"
             onClick={[Function]}
+            style={
+              Object {
+                "width": "fit-content",
+              }
+            }
           >
             Christopher Nolan
           </span>
         </div>
-      </div>
-    </div>
-    <div
-      className="movieAccordionContainer"
-    >
-      <div
-        className="accordion"
-      >
         <div
-          className="accordion-item"
+          className="accordion-title"
+          onClick={[Function]}
         >
-          <div
-            className="accordion-title"
-            onClick={[Function]}
-          >
-            <div>
-              More Info
-            </div>
-            <div>
-              +
-            </div>
+          <div>
+            +
           </div>
         </div>
       </div>
