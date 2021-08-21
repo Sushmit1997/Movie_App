@@ -17,7 +17,7 @@ test('Should render Inception text', () => {
 	expect(movieCardElement).toHaveTextContent('Inception')
 })
 
-test('Should render Avengers Text', () => {
+test('Should render Kingkong Text', () => {
 	render(
 		<SnackbarProvider maxSnack={3}>
 			{' '}
@@ -25,7 +25,7 @@ test('Should render Avengers Text', () => {
 		</SnackbarProvider>
 	)
 	const movieCardElement = screen.getByTestId('movieCard')
-	expect(movieCardElement).toHaveTextContent('Avengers')
+	expect(movieCardElement).toHaveTextContent('Kingkong')
 })
 
 test('<MovieCard/> renderes with correct text', () => {
