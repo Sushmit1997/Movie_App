@@ -89,16 +89,16 @@ const MovieCard: React.FC<Props> = (props: Props) => {
 
 	const fetchMovieDetails = () => {
 		setIsActive(!isActive)
-		// {
-		// 	!isActive &&
-		// 		movieDetail === '' &&
-		// 		get(
-		// 			`https://imdb-api.com/en/API/Title/k_patmt9tu/${movieInfo.id}/FullActor,Ratings,`
-		// 		).then((response: any) => {
-		// 			setMovieDetail(response.data)
-		// 			setMovieDetailLoading(false)
-		// 		})
-		// }
+		{
+			!isActive &&
+				movieDetail === '' &&
+				get(
+					`https://imdb-api.com/en/API/Title/k_patmt9tu/${movieInfo.id}/FullActor,Ratings,`
+				).then((response: any) => {
+					setMovieDetail(response.data)
+					setMovieDetailLoading(false)
+				})
+		}
 	}
 
 	const handleDirectorClick = (e) => {
@@ -158,7 +158,7 @@ const MovieCard: React.FC<Props> = (props: Props) => {
 											{movieDetail.imDbRating === null && (
 												<li>
 													{' '}
-													If you see no data, probably api limit is reached.
+													If you see no data, probably API limit is reached.
 												</li>
 											)}
 
@@ -170,7 +170,7 @@ const MovieCard: React.FC<Props> = (props: Props) => {
 												{' '}
 												<span>Budget:</span>{' '}
 												{movieDetail.boxOffice !== null &&
-													movieDetail.boxOffice}
+													movieDetail.boxOffice.budget}
 											</li>
 											<li>
 												<span>Imdb Rating:</span> {movieDetail.imDbRating}{' '}
