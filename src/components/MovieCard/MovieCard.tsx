@@ -8,14 +8,6 @@ import Fade from '@material-ui/core/Fade'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import { get } from '../../utils/http'
 
-const accordionData = {
-	title: 'More',
-	content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis sapiente
-      laborum cupiditate possimus labore, hic temporibus velit dicta earum
-      suscipit commodi eum enim atque at? Et perspiciatis dolore iure
-      voluptatem.`,
-}
-
 interface Props {
 	movieInfo: IMovieData
 	key: number
@@ -36,8 +28,6 @@ const useStyles = makeStyles((theme) => ({
 
 const MovieCard: React.FC<Props> = (props: Props) => {
 	const { movieInfo } = props
-
-	const { title, content } = accordionData
 
 	const { enqueueSnackbar, closeSnackbar } = useSnackbar()
 
@@ -118,8 +108,6 @@ const MovieCard: React.FC<Props> = (props: Props) => {
 
 	const classes = useStyles()
 
-	console.log('Movie details', movieDetail)
-
 	return (
 		<div
 			data-testid={`movieCard`}
@@ -167,13 +155,22 @@ const MovieCard: React.FC<Props> = (props: Props) => {
 										</div>
 									) : (
 										<ul className='accordion-ul'>
+											{movieDetail.imDbRating === null && (
+												<li>
+													{' '}
+													If you see no data, probably api limit is reached.
+												</li>
+											)}
+
 											<li>
 												{' '}
 												<span>Awards:</span> {movieDetail.awards}
 											</li>
 											<li>
 												{' '}
-												<span>Budget:</span> {movieDetail.boxOffice.budget}
+												<span>Budget:</span>{' '}
+												{movieDetail.boxOffice !== null &&
+													movieDetail.boxOffice}
 											</li>
 											<li>
 												<span>Imdb Rating:</span> {movieDetail.imDbRating}{' '}
